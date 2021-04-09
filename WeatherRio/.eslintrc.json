@@ -5,7 +5,8 @@
     },
     "extends": [
         "airbnb-base",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
     ],
     "globals": {
       "__DEV__": "readonly"
@@ -21,8 +22,8 @@
     "plugins": [
       "react",
       "react-hooks",
-      "@typescript-eslint"
-
+      "@typescript-eslint",
+      "prettier"
     ],
     "rules": {
       "import/no-useless-path-segments": "off",
@@ -46,7 +47,7 @@
 	        ]
 	      }
 	    ],
-
+      "prettier/prettier": "error",
 	    "no-use-before-define": "off",
 	    "@typescript-eslint/no-use-before-define": [
 	      "error"
