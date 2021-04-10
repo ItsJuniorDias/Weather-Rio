@@ -26,6 +26,7 @@
       "prettier"
     ],
     "rules": {
+      "import/prefer-default-export": "off",
       "import/no-useless-path-segments": "off",
       "import/no-cycle": "off",
       "import/no-self-import": "off",
