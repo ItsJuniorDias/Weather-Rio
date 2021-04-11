@@ -4,7 +4,7 @@ import { Image, View } from 'react-native';
 import { IWeather } from '../../store/modules/weather/types';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setWeatherData } from '../../store/modules/weather/actions';
+import { setWeatherDataRequest } from '../../store/modules/weather/actions';
 
 import api from '../../services/api';
 
@@ -28,17 +28,10 @@ const Home: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    api
-      .get('/weather?q=Sao%20Paulo&appid=cab0b063b14e7ebbff4cfbde7816ba52')
-      .then(response => {
-        setDataWeather(response.data);
-        dispatch(setWeatherData(response.data));
-      });
+    dispatch(setWeatherDataRequest());
   }, [dispatch]);
 
   console.log(weather);
-
-  console.log(dataWeather);
 
   return (
     <>
