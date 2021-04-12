@@ -33,12 +33,6 @@ const Home: React.FC = () => {
 
   console.log(weather);
 
-  const { id } = weather;
-  const { feels_like, temp } = weather.main;
-  const { description } = weather.weather[0];
-
-  console.log(id, temp, description, feels_like);
-
   return (
     <>
       <Container>
@@ -55,12 +49,15 @@ const Home: React.FC = () => {
           </ContentTitle>
         </Header>
 
-        <CardClimate
-          id={id}
-          feelsLike={feels_like}
-          temp={temp}
-          description={description}
-        />
+        {weather.map(item => (
+          <CardClimate
+            key={item.id}
+            id={item.id}
+            feelsLike={item.main.feels_like}
+            temp={item.main.temp}
+            description={item.weather[0].description}
+          />
+        ))}
 
         <CardInfoClimate />
       </Container>

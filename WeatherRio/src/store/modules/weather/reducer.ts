@@ -14,7 +14,7 @@ const weather: Reducer<IWeatherState> = (state = INITIAL_STATE, action) => {
     case ActionTypes.setWeatherDataSuccess:
       return {
         ...state,
-        items: action.items,
+        items: [action.items],
       };
     default:
       return state;
