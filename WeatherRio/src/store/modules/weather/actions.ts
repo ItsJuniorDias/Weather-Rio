@@ -10,9 +10,7 @@ export function setWeatherDataRequest() {
 export function setWeatherDataSuccess(items: IWeather) {
   return {
     type: 'SET_DATA_WEATHER_SUCCESS',
-    payload: {
-      items,
-    },
+    items,
   };
 }
 

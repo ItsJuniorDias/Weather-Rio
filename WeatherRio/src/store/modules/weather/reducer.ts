@@ -1,5 +1,5 @@
 import { Reducer } from 'react';
-import { IWeatherState, ActionTypes } from './types';
+import { ActionTypes, IWeatherState } from './types';
 
 const INITIAL_STATE: IWeatherState = {
   items: [],
@@ -14,7 +14,7 @@ const weather: Reducer<IWeatherState> = (state = INITIAL_STATE, action) => {
     case ActionTypes.setWeatherDataSuccess:
       return {
         ...state,
-        items: action.payload,
+        items: action.items,
       };
     default:
       return state;

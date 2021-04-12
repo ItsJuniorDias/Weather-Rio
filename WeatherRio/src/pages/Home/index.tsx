@@ -1,9 +1,10 @@
+/* eslint-disable camelcase */
 import React, { useState, useEffect } from 'react';
 import { Image, View } from 'react-native';
 
 import { IWeather } from '../../store/modules/weather/types';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, DefaultRootState } from 'react-redux';
 import { setWeatherDataRequest } from '../../store/modules/weather/actions';
 
 import api from '../../services/api';
@@ -20,11 +21,10 @@ import {
 import { CardClimate, CardInfoClimate } from '../../components';
 
 import arrow from '../../assets/expand-arrow.png';
+import { IState } from '../../store';
 
 const Home: React.FC = () => {
-  const [dataWeather, setDataWeather] = useState<IWeather[]>([]);
-
-  const weather = useSelector(state => state);
+  const weather = useSelector<IState, IWeather[]>(state => state.weather.items);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,6 +32,12 @@ const Home: React.FC = () => {
   }, [dispatch]);
 
   console.log(weather);
+
+  const { id } = weather;
+  const { feels_like, temp } = weather.main;
+  const { description } = weather.weather[0];
+
+  console.log(id, temp, description, feels_like);
 
   return (
     <>
@@ -49,7 +55,12 @@ const Home: React.FC = () => {
           </ContentTitle>
         </Header>
 
-        <CardClimate />
+        <CardClimate
+          id={id}
+          feelsLike={feels_like}
+          temp={temp}
+          description={description}
+        />
 
         <CardInfoClimate />
       </Container>

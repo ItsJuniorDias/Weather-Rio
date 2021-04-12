@@ -8,7 +8,7 @@ import rootSaga from './modules/rootSaga';
 import { IWeatherState } from './modules/weather/types';
 
 export interface IState {
-  items: IWeatherState;
+  weather: IWeatherState;
 }
 
 const sagaMiddleware = createSagaMiddleware();

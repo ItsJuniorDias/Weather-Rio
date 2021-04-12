@@ -21,6 +21,7 @@ function* setWeatherDataSaga() {
       api.get,
       '/weather?q=Sao%20Paulo&appid=cab0b063b14e7ebbff4cfbde7816ba52',
     );
+
     yield put(setWeatherDataSuccess(responseData.data));
   } catch (e) {
     yield put(setWeatherDataFailure());
