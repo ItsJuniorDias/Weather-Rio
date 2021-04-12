@@ -2,13 +2,12 @@
 Application that reports weather data based on user location
 
 **Tools**
+- **Redux** for global application state control;
+- **Redux-saga** to take care of asynchronous calls in the application;
 - **Axios** were used for consumption by Api;
 - **Styled-component** to work with customizable components;
 - **React-Navigation** for navigation between screens;
-- **Redux** for global application state control;
-- **Redux-saga** to take care of asynchronous calls in the application;
 
- 
 **Installing dependencies**
 
 ```
