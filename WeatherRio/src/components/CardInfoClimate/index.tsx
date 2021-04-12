@@ -3,22 +3,32 @@ import { View } from 'react-native';
 
 import { Container, Content, Title, Description } from './styles';
 
-const CardInfoClimate: React.FC = () => {
+interface ICardInfoCliamte {
+  wind: number;
+  humidity: number;
+  visibility: number;
+}
+
+const CardInfoClimate: React.FC<ICardInfoCliamte> = ({
+  wind,
+  humidity,
+  visibility,
+}) => {
   return (
     <Container>
       <Content>
         <Title>Vento</Title>
-        <Description>33 m/h</Description>
+        <Description>{wind} m/h</Description>
       </Content>
 
       <Content>
         <Title>Humidade</Title>
-        <Description>23 km</Description>
+        <Description>{humidity} km</Description>
       </Content>
 
       <Content>
         <Title>Visibilidade</Title>
-        <Description>64 %</Description>
+        <Description>{visibility / 100} %</Description>
       </Content>
     </Container>
   );

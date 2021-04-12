@@ -59,7 +59,14 @@ const Home: React.FC = () => {
           />
         ))}
 
-        <CardInfoClimate />
+        {weather.map(item => (
+          <CardInfoClimate
+            key={item.id}
+            wind={item.wind.deg}
+            humidity={item.main.humidity}
+            visibility={item.visibility}
+          />
+        ))}
       </Container>
     </>
   );
