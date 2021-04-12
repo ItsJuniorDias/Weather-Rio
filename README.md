@@ -12,7 +12,7 @@ Application that reports weather data based on user location
 **Installing dependencies**
 
 ```
-$ cd mobile 
+$ cd WeatherRio 
 $ yarn 
 ```
 
@@ -25,7 +25,7 @@ $ yarn
 Android
 
 ```
-$ cd mobile 
+$ cd WeatherRio 
 $ yarn android 
 ```
 
