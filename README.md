@@ -1,7 +1,8 @@
 # Weather-Rio :sun_behind_rain_cloud:
 Application that reports weather data based on user location
 
-![bcb73140-089f-42c3-beac-812c0e8fbb01](https://user-images.githubusercontent.com/50254416/114331222-f1506e80-9b19-11eb-8349-a665d7e4c04e.jpg)
+
+![bcb73140-089f-42c3-beac-812c0e8fbb01-vert-new](https://user-images.githubusercontent.com/50254416/114331438-5c01aa00-9b1a-11eb-963c-9f949dbda0ba.jpg)
 
 
 **Tools**
